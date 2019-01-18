@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <title>The Materialize Tabs Example</title>
+      <meta name = "viewport" content = "width = device-width, initial-scale = 1">      
+      <link rel = "stylesheet"
+         href = "https://fonts.googleapis.com/icon?family=Material+Icons">
+      <link rel = "stylesheet" 
+         href = "https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/css/materialize.min.css">
+      <script type = "text/javascript"
+         src = "https://code.jquery.com/jquery-2.1.1.min.js"></script>           
+      <script src = "https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/js/materialize.min.js"></script> 
+	  <script type = "text/javascript" src = "https://code.jquery.com/jquery-2.1.1.min.js"></script>    
+	  <script>
+         $(document).ready(function() {
+            $('select').material_select();
+         });
+      </script>
+   </head>
+<body>
+
+
+  <nav class="indigo">
+    <div class="nav-wrapper container indigo"><a id="logo-container" href="#" class="brand-logo">Logo</a>
+      <ul class="right hide-on-med-and-down">
+        <li><a href="#">Navbar Link</a></li>
+      </ul>
+
+    </div>
+  </nav>
+
+
+
+  <div class="container">
+    <div class="section">
+      <!--   Icon Section   -->
+      <div class="row">
+        <div class="col s12 m8">
+          <div class="icon-block">
+
+			  <!-- <div class="row"> -->
+				<!-- <div class="col s12 m12"> -->
+				  <!-- <div class="card"> -->
+					<!-- <div class="card-content"> -->
+					  <!-- <span class="card-title white-text"><p>Platform Pricing Calculator</p></span> -->
+					<!-- </div> -->
+					<!-- <div class="card-action"> -->
+			
+					<!-- </div> -->
+				  <!-- </div> -->
+				<!-- </div> -->
+			  <!-- </div> -->
+			<div class="card">
+				<div class="card-content red accent-1 white-text">
+				  <p>Platform Pricing Calculator</p>
+				</div>
+				<div class="card-tabs ">
+				  <ul class="tabs tabs-fixed-width">
+					<li class="tab"><a href="#test4"> <i class="material-icons">filter_drama</i></a></li>
+					<li class="tab"><a class="active" href="#test5">Test 2</a></li>
+					<li class="tab"><a href="#test6">Test 3</a></li>
+				  </ul>
+				</div>
+				<div class="card-content grey lighten-4">
+					<div id="test4">
+					  
+						<div class="row">
+							<form class="col s12">
+							  <div class="row">
+								<div class="input-field col s6">
+								  <input id="last_name" type="text" class="validate">
+								  <label for="last_name">Processo</label>
+								</div>
+
+								<div class="input-field col s6">
+									<div class = "row">
+									<label>Materialize Select</label>
+									   <select>
+										  <option value = "" disabled selected>Select Fruit</option>
+										  <option value = "1">Mango</option>
+										  <option value = "2">Orange</option>
+										  <option value = "3">Apple</option>
+									   </select>               
+									</div>
+								</div>
+							
+								
+							  </div>							
+							
+							</form>
+						</div>
+					  
+					  
+					  
+					</div>
+				  <div id="test5">Test 2</div>
+				  <div id="test6">Test 3</div>
+				</div>
+			</div>
+          </div>
+        </div>
+		
+
+
+        <div class="col s12 m4">
+            <div class="row">
+				<div class="card-panel teal">
+					<span class="white-text">I am a very simple card. I am good at containing small bits of information.
+					I am convenient because I require little markup to use effectively. I am similar to what is called a panel in other frameworks.
+					</span>
+				</div>
+			</div>
+        </div>
+
+
+      </div>
+
+    </div>
+    <br><br><br><br><br><br>
+  </div>
+
+  <footer class="page-footer orange">
+    <div class="container">
+      <div class="row">
+        <div class="col l6 s12">
+          <h5 class="white-text">Company Bio</h5>
+          <p class="grey-text text-lighten-4">We are a team of college students working on this project like it's our full time job. Any amount would help support and continue development on this project and is greatly appreciated.</p>
+
+
+        </div>
+        <div class="col l3 s12">
+          <h5 class="white-text">Settings</h5>
+          <ul>
+            <li><a class="white-text" href="#!">Link 1</a></li>
+            <li><a class="white-text" href="#!">Link 2</a></li>
+            <li><a class="white-text" href="#!">Link 3</a></li>
+            <li><a class="white-text" href="#!">Link 4</a></li>
+          </ul>
+        </div>
+        <div class="col l3 s12">
+          <h5 class="white-text">Connect</h5>
+          <ul>
+            <li><a class="white-text" href="#!">Link 1</a></li>
+            <li><a class="white-text" href="#!">Link 2</a></li>
+            <li><a class="white-text" href="#!">Link 3</a></li>
+            <li><a class="white-text" href="#!">Link 4</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright">
+      <div class="container">
+      Made by <a class="orange-text text-lighten-3" href="http://materializecss.com">Materialize</a>
+      </div>
+    </div>
+  </footer>
+
+
+  <!--  Scripts-->
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="js/materialize.js"></script>
+  <script src="js/init.js"></script>
+
+  <script>
+    var instance = M.Tabs.init(el, options);
+
+	  // Or with jQuery
+
+	$(document).ready(function(){
+		$('.tabs').tabs();
+	});
+  </script>
+  </body>
+</html>
