@@ -11,32 +11,38 @@
 			$(document).ready(function() {
 			   $('select').material_select();
 			});
+			$('#add').click(function() {
+				var clone = $('.form-main').clone('.form-block');
+				$('.form-main').append(clone);
+			});
 		</script>
-       <script>
-            //Funcao adiciona uma nova linha na tabela
-            function adicionaLinha(idTabela) {
-                var tabela = document.getElementById(idTabela);
-                var numeroLinhas = tabela.rows.length;
-                var linha = tabela.insertRow(numeroLinhas);
-                var celula1 = linha.insertCell(0);
-                var celula2 = linha.insertCell(1);   
-                var celula3 = linha.insertCell(2); 
-                celula1.innerHTML = 'produto '+ Math.floor((Math.random() * 100) + 1); 
-                celula2.innerHTML =  Math.floor((Math.random() * 100) + 1); 
-                celula3.innerHTML =  "<button class = 'btn waves-effect indigo'  onclick='removeLinha(this)'>Remover</button>";
-            }
-            
-            // funcao remove uma linha da tabela
-            function removeLinha(linha) {
-              var i=linha.parentNode.parentNode.rowIndex;
-              document.getElementById('tbl').deleteRow(i);
-            }            
-        </script>		
+		<style>
+			.tabs .tab a{
+				color: #26a69a !important;
+			}
+			.tabs .tab a:hover {
+				color: #26a69a !important;
+			}
+			.btn, .btn-large{
+				background-color: #fafafa;
+				color: #00796b ;
+			}
+			button:focus {
+				outline: none;
+				background-color: #00796b;
+				color: #fafafa ;
+			}
+
+		</style>
+	</head>
+
+
+		
 		<body> 
-		<nav class="indigo">
-			<div class="nav-wrapper container indigo"><a id="logo-container" href="#" class="brand-logo">Logo</a>
-			  <ul class="right hide-on-med-and-down">
-				<li><a href="#">Navbar Link</a></li>
+		<nav class=" teal darken-2">
+			<div class="nav-wrapper container  teal darken-2"><a id="logo-container" href="#" class="brand-logo">Logo</a>
+			  <ul class="right hide-on-med-and-down" >
+				<li><a href="#">Login</a></li>
 			  </ul>
 
 			</div>
@@ -50,53 +56,67 @@
 				<div class="col s12 m7">
 				  <div class="icon-block">
 					<div class="card">
-						<div class="card-content indigo white-text">
+						<div class="card-content  teal darken-2 white-text">
 						  <p>Platform Pricing Calculator</p>
 						</div>
-						<div class="card-content">
-						  <p>Platform Pricing Calculator</p>
-						</div>
+
 						<div class = "card-content">
 							<div class="row">
 								<form class="col s12">
 								  <div class="row">
-									<div class="input-field col s12">
-									  <input id="processo" type="text" class="validate">
-									  <label for="last_name">Processo</label>
+								       
+									<div class = "col s12">
+										<ul class = "tabs">
+										   <li class = "tab col s3"><a href = "#inbox">Processo</a></li>
+										   <li class = "tab col s3"><a class = "active" href = "#unread">Nome[Processo]</a></li>
+										
+										   <li class = "tab col s3"><a href = "#sent">Nome[Processo]</a></li>
+										</ul>
 									</div>
+										
+									<div id = "inbox"  class = "col s12">
+										<div class="row">
+											<div class="input-field col s12">
+												<input id="processo" name="processo[]" type="text" class="validate">
+												<label for="last_name">Processo</label>
+											</div>
+										</div>
+									  <div class="row">
+										<div class="input-field col s6">
+											<select>
+												<option value = "" disabled selected>Quantidade</option>
+												<option value = "1">1</option>
+												<option value = "2">2</option>
+												<option value = "3">3</option>
+											</select>               
+										</div>
+
+										<div class="input-field col s6">
+											<select>
+												<option value = "" disabled selected>Ferramenta</option>
+												<option value = "1">RPA</option>
+												<option value = "2">dEV</option>
+												<option value = "3">tESTE</option>
+											</select>               
+
+										</div>
+									  </div>
+									  <div class="row">
+										<div class="input-field col s12">
+										  <textarea id="textarea1" class="materialize-textarea"></textarea>
+										  <label for="textarea1">Comentários</label>
+										</div>
+									  </div>
+									  <div class="row">
+										<div class="input-field col s12">
+										 <button class = "btn waves-effect teal darken-2" id ="add" type = "submit">Estimativa</button></td>
+										</div>
+									  </div>									
+									</div>
+									<div id = "unread" class = "col s12">Unread</div>
+									<div id = "sent"   class = "col s12">Sent</div>
 								  </div>	
-								 
-								  <div class="row">
-									<div class="input-field col s6">
-										<select>
-											<option value = "" disabled selected>Quantidade</option>
-											<option value = "1">Mango</option>
-											<option value = "2">Orange</option>
-											<option value = "3">Apple</option>
-										</select>               
-									</div>
 
-									<div class="input-field col s6">
-										<select>
-											<option value = "" disabled selected>Ferramenta</option>
-											<option value = "1">RPA</option>
-											<option value = "2">dEV</option>
-											<option value = "3">tESTE</option>
-										</select>               
-
-									</div>
-								  </div>
-								  <div class="row">
-									<div class="input-field col s12">
-									  <textarea id="textarea1" class="materialize-textarea"></textarea>
-									  <label for="textarea1">Comentários</label>
-									</div>
-								  </div>
-								  <div class="row">
-									<div class="input-field col s12">
-									 <button class = "btn waves-effect indigo" type = "submit" onclick="adicionaLinha('tbl')">Estimativa</button></td>
-									</div>
-								  </div>							  
 								</form>
 							</div>
 						</div>
@@ -108,18 +128,40 @@
 				<div class="col s12 m5">
 					<div class="row">
 						<div class="card">
-							<div class="card-content indigo white-text">
+							<div class="card-content  teal darken-2 white-text">
 								<p>Estimativa</p>
 							</div>
 							<div class = "card-content">
-							<button class = "btn waves-effect indigo" type = "submit" onclick="adicionaLinha('tbl')">Estimativa</button></td>
-								<table id="tbl" border="1">
-								<tr>
-								  <td>Produto</td>
-								  <td>Quantidade</td>
-								  <td>Acao</td>
-								</tr>
-								</table> 								
+						
+								<div class="card">
+								<div class="card-content  grey lighten-5">
+									<p><b>Valor Total:  R$ 1.000,00</b></p>
+								</div>
+								<div class = "card-content">
+									<button class = "btn waves-effect waves-teal">Export</button></td>
+									<button class = "btn waves-effect waves-teal">Salvar</button></td>
+								</div>							
+							</div>	
+							
+							<div class="card">
+								<div class="card-content grey lighten-5">
+									<p>Processo:</p>
+								</div>
+								<div class = "card-content">
+									<p>Quantidade:</p>
+									<hr>
+									<p>Ferramenta:</p>
+									<hr>
+									<p>Dev:</p>								
+									<hr>
+									<p>Launch:</p>
+									<hr>
+									<p>Gestão:</p>								
+									<hr>
+									<p>Total:</p>
+								</div>							
+							</div>		
+
 							</div>
 						</div>
 
